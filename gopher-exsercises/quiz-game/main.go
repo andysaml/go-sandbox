@@ -84,9 +84,7 @@ func startQuiz() {
 		input = strings.TrimSuffix(input, "\n")
 		input = strings.TrimSuffix(input, "\r")
 
-		//userAnswer, err := strconv.Atoi(input)
-
-		userAnswer := 3
+		userAnswer, err := strconv.Atoi(input)
 
 		if err != nil {
 			fmt.Println(err)
@@ -108,6 +106,6 @@ func startQuiz() {
 	}
 
 	fmt.Println("Your right answers are: ", rightNumb, " , and wrong are:", wrongNumb)
-	//elapsed := time.Since(start)
-	//fmt.Println("Time spent:", elapsed)
+	elapsed := time.Since(start)
+	fmt.Println("Time spent:", elapsed)
 }
