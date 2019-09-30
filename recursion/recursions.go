@@ -16,7 +16,7 @@ func factorTail(x, acc int) int {
 
 }
 
-func factorTailCover(n int) int {
+func factorTailWrapper(n int) int {
 	factorTail := func(x, acc int) int {
 		acc *= x
 		if x == 1 {
