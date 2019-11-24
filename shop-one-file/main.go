@@ -46,7 +46,7 @@ func getBook(w http.ResponseWriter, r *http.Request) {
 func createBook(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var book Book                              //инициализируем объект структуры Book
-	_ = json.NewDecoder(r.Body).Decode(&book)  //парсим тело запроса и связываем её с объектом book, передаваемым по ссылке.   &&&&&&&&&&&&&&&&&&&&&&&&&&&&
+	json.NewDecoder(r.Body).Decode(&book)      //парсим тело запроса записываем по адресу только что созданной переменной book,
 	book.ID = strconv.Itoa(rand.Intn(1000000)) //Дальше мы формируем случайный ID
 	books = append(books, book)                //включаем новую книгу в массив books с помощью встроенной функции append.
 	json.NewEncoder(w).Encode(book)
